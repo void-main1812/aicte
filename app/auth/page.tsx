@@ -3,10 +3,12 @@
 import SocialAuthButton from "@/components/SocialAuthButton";
 import { Button } from "@/components/ui/Button";
 import { Input } from "@/components/ui/Input";
-import { Separator } from "@/components/ui/separator";
+import { Separator } from "@/components/ui/Separator";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
+import { IoArrowBack } from "react-icons/io5";
 
 const page = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -15,26 +17,43 @@ const page = () => {
     setShowPassword(!showPassword);
   }
 
+  const router = useRouter();
+
   return (
     <div className="h-[100vh] w-full flex justify-center items-center bg-transparent">
-      {/* Logo */}
-      <Link
-        href={"/home"}
-        className="flex justify-center items-center gap-x-4 absolute top-4 left-4"
-      >
-        <Image
-          src="/images/AICTE.png"
-          width={50}
-          height={50}
-          alt="Logo for aicte"
-        />
-        <div className="flex flex-col justify-center items-start">
-          <h1 className="text-xl font-bold">AICTE</h1>
-          <h2 className="text-sm font-base">
-            All India Council for Technical Education
-          </h2>
-        </div>
-      </Link>
+      {/* Header for Auth Page */}
+      <div className="w-full flex flex-row-reverse justify-between items-center p-4 absolute top-0">
+        {/* Button to Home */}
+        <Button
+          variant={"outline"}
+          size={"default"}
+          className="flex justify-center items-center gap-2 hover:gap-4 transition-all duration-300"
+          onClick={() => {
+            router.push("/home");
+          }}
+        >
+          <IoArrowBack className="text-lg" />
+          Back to Home
+        </Button>
+        {/* Logo */}
+        <Link
+          href={"/home"}
+          className="flex justify-center items-center gap-x-4"
+        >
+          <Image
+            src="/images/AICTE.png"
+            width={50}
+            height={50}
+            alt="Logo for aicte"
+          />
+          <div className="flex flex-col justify-center items-start">
+            <h1 className="text-xl font-bold">AICTE</h1>
+            <h2 className="text-sm font-base">
+              All India Council for Technical Education
+            </h2>
+          </div>
+        </Link>
+      </div>
       {/* Authentication Details Section */}
       <div className="flex flex-col gap-10 justify-center items-center">
         {/* Greeting Text */}
