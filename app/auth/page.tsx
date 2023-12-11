@@ -9,6 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
+import { OtpVerification } from "./components/OtpVerification";
 
 const page = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -18,6 +19,7 @@ const page = () => {
   }
 
   const router = useRouter();
+  const [showOtpModal, setShowOtpModal] = useState(false);
 
   return (
     <div className="h-[100vh] w-full flex justify-center items-center bg-transparent">
@@ -59,7 +61,7 @@ const page = () => {
         {/* Greeting Text */}
         <div className="flex flex-col justify-center items-center">
           <h1 className="text-3xl font-bold">Welcome to AICTE</h1>
-          <h2 className="text-md font-base text-neutral-400 ">
+          <h2 className="text-md font-lightb text-neutral-400 ">
             Login/Register to Continue
           </h2>
         </div>
@@ -87,10 +89,8 @@ const page = () => {
             </Button>
           </div>
         </div>
-        {/* Submit Button */}
-        <Button className="shadow-xl shadow-black/25 w-[15vw] z-10" size={"lg"}>
-          Continue
-        </Button>
+        {/* Otp Verification */}
+        <OtpVerification />
         {/* Saperator */}
         <div className="flex flex-col w-[25vw] justify-center items-center relative z-0">
           <Separator />
