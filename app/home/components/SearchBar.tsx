@@ -2,10 +2,11 @@ import React from "react";
 import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Separator } from "@/components/ui/Separator";
+import { Filter } from "./Filter";
 
-const SearchBar = () => {
+const SearchSection = () => {
   return (
-    <div className="w-full h-[75vh] bg-white overflow-hidden relative">
+    <div className="w-full h-full overflow-hidden relative rounded-[25px] mx-6">
       <video
         src="/videos/Flag.mp4"
         className="w-[200%] h-auto relative"
@@ -24,7 +25,7 @@ const SearchBar = () => {
         <p className="text-4xl font-bold text-white drop-shadow-md w-[60%]">
           Search across available{" "}
           <span className="font-black text-stone-900">Scholarships</span>,{" "}
-          <span className="font-black text-stone-900">Courcees</span>,{" "}
+          <span className="font-black text-stone-900">Cources</span>,{" "}
           <span className="font-black text-stone-900">Faculties</span> and{" "}
           <span className="font-black text-stone-900">Collages</span>
         </p>
@@ -45,13 +46,7 @@ const SearchBar = () => {
             <p className="text-lg font-normal text-stone-700">
               {" "}
               Not sure what to search?
-              <Button
-                variant={"link"}
-                size={"lg"}
-                className="text-lg font-bold"
-              >
-                Help me Search!
-              </Button>
+              <Filter />
             </p>
           </div>
         </div>
@@ -72,4 +67,4 @@ const SearchBar = () => {
   );
 };
 
-export default SearchBar;
+export default SearchSection;

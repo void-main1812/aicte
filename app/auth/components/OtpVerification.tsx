@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/Button";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/Dialog";
 import { Input } from "@/components/ui/Input";
-import { Label } from "@/components/ui/Label";
 
 export function OtpVerification() {
   return (
