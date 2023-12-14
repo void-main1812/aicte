@@ -19,7 +19,6 @@ const page = () => {
   }
 
   const router = useRouter();
-  const [showOtpModal, setShowOtpModal] = useState(false);
 
   return (
     <div className="h-[100vh] w-full flex justify-center items-center bg-transparent">
