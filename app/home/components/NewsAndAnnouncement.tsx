@@ -25,7 +25,7 @@ const SchemeData = [
   {
     Name: "India Innovation Initiative",
     description:
-      "Indian’s largest innovation challengs jointly promoted by the CII and Department of Science & Technology.",
+      "Indian`&apos`s largest innovation challengs jointly promoted by the CII and Department of Science & Technology.",
   },
 ];
 
@@ -46,9 +46,12 @@ const NewsAndAnnouncement = () => {
           </h1>
         </div>
         <div className="col-span-2 row-span-2 grid grid-cols-2 grid-rows-2 gap-x-2 gap-y-2">
-          {SchemeData.map((item) => {
+          {SchemeData.map((item, key) => {
             return (
-              <div className="bg-gray-50 border border-black/15 rounded-2xl flex flex-col justify-between items-start p-8 ">
+              <div
+                key={key}
+                className="bg-gray-50 border border-black/15 rounded-2xl flex flex-col justify-between items-start p-8 "
+              >
                 <h1 className="text-black font-bold text-lg w-[60%] h-[40%]">
                   {item.Name}
                 </h1>

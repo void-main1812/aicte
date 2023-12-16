@@ -4,14 +4,14 @@ import { NavigationBar } from "@/components/NavigationBar";
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter } from "next/router";
 import React from "react";
 import SearchSection from "./components/SearchBar";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import FrequentlySearched from "./components/FrequentlySearched";
 import NewsAndAnnouncement from "./components/NewsAndAnnouncement";
 
-const index = () => {
+const Page = () => {
   const router = useRouter();
   const scrollPosition = useScrollPosition();
 
@@ -68,4 +68,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Page;

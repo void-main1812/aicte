@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import { IoArrowBack } from "react-icons/io5";
 import { OtpVerification } from "./components/OtpVerification";
 
-const page = () => {
+const Page = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   function handleShowPassword() {
@@ -106,4 +106,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
