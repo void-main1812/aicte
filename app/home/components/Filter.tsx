@@ -203,8 +203,11 @@ export function Filter() {
             <Separator className="bg-neutral-400" />
           </div>
           <div className="w-full grid grid-cols-2 gap-y-4">
-            {ScholarshipsCategory.map((item) => (
-              <div className="flex justify-between items-center w-[70%]">
+            {ScholarshipsCategory.map((item, key) => (
+              <div
+                key={key}
+                className="flex justify-between items-center w-[70%]"
+              >
                 <p
                   className={`text-sm font-light ${
                     variant != "Scholarships" ? "text-gray-400" : " "
@@ -250,8 +253,11 @@ export function Filter() {
             <Separator className="bg-neutral-400" />
           </div>
           <div className="w-full grid grid-cols-2 gap-y-4">
-            {CourseCategory.map((item) => (
-              <div className="flex justify-between items-center w-[70%]">
+            {CourseCategory.map((item, key) => (
+              <div
+                key={key}
+                className="flex justify-between items-center w-[70%]"
+              >
                 <p
                   className={`text-sm font-light ${
                     variant != "Courses" ? "text-gray-400" : " "
@@ -297,8 +303,11 @@ export function Filter() {
             <Separator className="bg-neutral-400" />
           </div>
           <div className="w-full grid grid-cols-2 gap-y-4">
-            {FacultyCategory.map((item) => (
-              <div className="flex justify-between items-center w-[70%]">
+            {FacultyCategory.map((item, key) => (
+              <div
+                key={key}
+                className="flex justify-between items-center w-[70%]"
+              >
                 <p
                   className={`text-sm font-light ${
                     variant != "Faculty" ? "text-gray-400" : " "
@@ -344,8 +353,11 @@ export function Filter() {
             <Separator className="bg-neutral-400" />
           </div>
           <div className="w-full grid grid-cols-2 gap-y-4">
-            {collageCategory.map((item) => (
-              <div className="flex justify-between items-center w-[70%]">
+            {collageCategory.map((item, key) => (
+              <div
+                key={key}
+                className="flex justify-between items-center w-[70%]"
+              >
                 <p
                   className={`text-sm font-light ${
                     variant != "Collages" ? "text-gray-400" : " "

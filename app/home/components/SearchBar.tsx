@@ -54,9 +54,9 @@ const SearchSection = () => {
       {/* Quote */}
       <div className="absolute bottom-8 right-48 bg-white/30 p-4 backdrop-blur-md flex justify-center items-center flex-col gap-4 w-[30vw] rounded-md">
         <p className="font-normal">
-          Time for phrases like 'Hota Hai-Chalta Hai' is now a matter of past.
-          India is growing rapidly and the world has high expectations from us.
-          We cannot let this opportunity go.
+          Time for phrases like `&apos`Hota Hai-Chalta Hai`&apos` is now a
+          matter of past. India is growing rapidly and the world has high
+          expectations from us. We cannot let this opportunity go.
         </p>
         <Separator className="bg-gray-300 w-[80%]" />
         <p className="text-left w-full text-lg font-semibold">
