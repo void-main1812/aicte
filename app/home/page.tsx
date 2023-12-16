@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 import React from "react";
 import SearchSection from "./components/SearchBar";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
+import FrequentlySearched from "./components/FrequentlySearched";
+import NewsAndAnnouncement from "./components/NewsAndAnnouncement";
 
 const index = () => {
   const router = useRouter();
@@ -53,6 +55,14 @@ const index = () => {
       {/* Search Bar */}
       <div className="w-full h-[80vh] flex justify-center items-center">
         <SearchSection />
+      </div>
+      {/* Frequently searched data */}
+      <div className="w-full flex justify-center items-center p-16">
+        <FrequentlySearched />
+      </div>
+      {/* News and Announcement Section */}
+      <div className="w-full flex justify-center items-center p-16">
+        <NewsAndAnnouncement />
       </div>
     </div>
   );

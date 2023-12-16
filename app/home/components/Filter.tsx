@@ -146,7 +146,7 @@ const FacultyCategory = [
 ];
 
 export function Filter() {
-  const [variant, setVariants] = useState<string>("Scholarships");
+  const [variant, setVariants] = useState<string>(" ");
 
   function handleScroll(e: string) {
     const category = document.getElementById(e);
