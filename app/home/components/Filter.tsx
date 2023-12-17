@@ -13,7 +13,7 @@ import { Separator } from "@/components/ui/Separator";
 import { useState } from "react";
 import "../home.css";
 
-const categories = ["Scholarships", "Courses", "Faculty", "Collages"];
+const categories = ["Scholarships", "Courses", "Collages"];
 
 const CourseCategory = [
   {
