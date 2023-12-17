@@ -221,8 +221,7 @@ export function Filter() {
             </h1>
             <Separator className="bg-neutral-400" />
           </div>
-          
-        </div>
+        
         <div
           id="Collages"
           className="flex flex-col justify-start items-start gap-y-4 w-[100%]"
