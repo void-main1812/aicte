@@ -18,34 +18,12 @@ const categories = ["Scholarships", "Courses", "Faculty", "Collages"];
 const CourseCategory = [
   {
     name: "Duration",
-    options: ["1 Month", "2 Month", "3 Month", "4 Month", "5 Month"],
+    options: ["15 Weeks", "4 Weeks", "12 Weeks", "8 Weeks", "6 Weeks", "24 Weeks","Self Paced"],
   },
-  { name: "Level", options: ["Beginner", "Intermediate", "Advanced"] },
-  {
-    name: "Subject",
-    options: [
-      "Maths",
-      "Science",
-      "English",
-      "Hindi",
-      "Engineering",
-      "Medical",
-      "Commerce",
-      "Management",
-      "Law",
-      "Design",
-      "Architecture",
-      "Computer Science",
-      "Arts",
-      "Media",
-      "Hospitality",
-      "Agriculture",
-      "Aviation",
-    ],
-  },
+  
   {
     name: "Provider",
-    options: ["IIT", "IIM", "NIT", "AIIMS", "BITS", "DU", "JNU", "AMU"],
+    options: ["CEC", "UGC", "NITTTR", "IIMB", "AICTE", "IGNOU", "NPTEL","NIOS"],
   },
 ];
 
@@ -66,31 +44,16 @@ const ScholarshipsCategory = [
       "more than 5 Lakh",
     ],
   },
-  {
-    name: "Provider",
-    options: [
-      "IIT",
-      "IIM",
-      "NIT",
-      "AIIMS",
-      "BITS",
-      "DU",
-      "JNU",
-      "AMU",
-      "Government",
-      "Private",
-      "NGO",
-    ],
-  },
+  
 ];
 
 const collageCategory = [
   {
     name: "Sector",
-    options: ["Government", "Private"],
+    options: ["Government", "Govt aided", "Private-Self Financing", "State Government", "State Private University", "State Government University", "Deemed to be University(Pvt)"],
   },
   {
-    name: "NIRF",
+    name: "NIRF Ranking",
     options: [
       "1-20",
       "21-40",
@@ -106,38 +69,6 @@ const collageCategory = [
   },
 ];
 
-const FacultyCategory = [
-  {
-    name: "Collage",
-    options: ["IIT", "IIM", "NIT", "AIIMS", "BITS", "DU", "JNU", "AMU"],
-  },
-  {
-    name: "Subject",
-    options: [
-      "Maths",
-      "Science",
-      "English",
-      "Hindi",
-      "Engineering",
-      "Medical",
-      "Commerce",
-      "Management",
-      "Law",
-      "Design",
-      "Architecture",
-      "Computer Science",
-      "Arts",
-      "Media",
-      "Hospitality",
-      "Agriculture",
-      "Aviation",
-    ],
-  },
-  {
-    name: "Qualification",
-    options: ["Phd", "Masters", "Bachelors", "Diploma"],
-  },
-];
 
 export function Filter() {
   const [variant, setVariants] = useState<string>("Scholarships");
