@@ -92,22 +92,16 @@ const collageCategory = [
   {
     name: "NIRF",
     options: [
-      "top 100",
-      "100-200",
-      "200-300",
-      "300-400",
-      "400-500",
-      "500-600",
-      "600-700",
-      "700-800",
-      "800-900",
-      "900-1000",
-      "1000-1100",
-      "1100-1200",
-      "1200-1300",
-      "1300-1400",
-      "1400-1500",
-      "more than 1500",
+      "1-20",
+      "21-40",
+      "41-60",
+      "61-80",
+      "81-100",
+      "101-120",
+      "121-140",
+      "141-160",
+      "161-180",
+      "181-200",
     ],
   },
 ];
@@ -296,37 +290,7 @@ export function Filter() {
             </h1>
             <Separator className="bg-neutral-400" />
           </div>
-          <div className="w-full grid grid-cols-2 gap-y-4">
-            {FacultyCategory.map((item) => (
-              <div className="flex justify-between items-center w-[70%]">
-                <p
-                  className={`text-sm font-light ${
-                    variant != "Faculty" ? "text-gray-400" : " "
-                  }`}
-                >
-                  {item.name}:
-                </p>
-                <Select
-                  onValueChange={(e) => {}}
-                  disabled={variant != "Faculty"}
-                >
-                  <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Select a Category" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>{item.name}</SelectLabel>
-                      {item.options.map((category) => (
-                        <SelectItem key={category} value={category}>
-                          {category}
-                        </SelectItem>
-                      ))}
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-              </div>
-            ))}
-          </div>
+          
         </div>
         <div
           id="Collages"
