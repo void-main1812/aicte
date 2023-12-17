@@ -206,21 +206,6 @@ export function Filter() {
             ))}
           </div>
         </div>
-        <div
-          id="Faculty"
-          className="flex flex-col justify-start items-start gap-y-4 w-[100%]"
-        >
-          {/* Cources Filter */}
-          <div className="flex flex-col justify-start items-start w-[15%] ">
-            <h1
-              className={`text-lg font-semibold ${
-                variant != "Faculty" ? "text-gray-400" : " "
-              }`}
-            >
-              Faculty
-            </h1>
-            <Separator className="bg-neutral-400" />
-          </div>
         
         <div
           id="Collages"
