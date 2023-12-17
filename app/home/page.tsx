@@ -5,15 +5,36 @@ import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React from "react";
+import React, { useEffect } from "react";
 import SearchSection from "./components/SearchBar";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import FrequentlySearched from "./components/FrequentlySearched";
 import NewsAndAnnouncement from "./components/NewsAndAnnouncement";
+import axios from "axios";
 
 const Page = () => {
   const router = useRouter();
   const scrollPosition = useScrollPosition();
+
+  const [data, setData] = React.useState([]);
+
+  const [page, setPage] = React.useState(1);
+
+  const baseUrl = `https://aicte-backend-sih.onrender.com/api/v1/scholarship/getAllScholarships?page=${page}`;
+
+  async function fetchData() {
+    try {
+      const response = await axios.get(baseUrl);
+      console.log(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  if (page < 13) {
+    setPage(page + 1);
+    fetchData();
+  }
 
   return (
     <div className="w-full flex flex-col pt-[5rem]">
