@@ -3,8 +3,12 @@ import { Input } from "@/components/ui/Input";
 import { Button } from "@/components/ui/Button";
 import { Separator } from "@/components/ui/Separator";
 import { Filter } from "./Filter";
+import { useRouter } from "next/navigation";
 
 const SearchSection = () => {
+  const [search, setSearch] = React.useState("");
+  const router = useRouter();
+
   return (
     <div className="w-full h-full overflow-hidden relative rounded-[25px] mx-6">
       <video
@@ -34,10 +38,12 @@ const SearchSection = () => {
             <Input
               placeholder="Search anything inside AICTE"
               className="rounded-sm w-full text-lg p-6"
+              onChange={(e) => setSearch(e.target.value)}
             />
             <Button
               size={"lg"}
               className="w-[25%] h-12 rounded-sm shadow-xl shadow-black/25 hover:shadow-none transition"
+              onClick={() => router.push(`/search?search=${search}`)}
             >
               Search
             </Button>
