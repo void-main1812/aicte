@@ -71,7 +71,7 @@ export function NavigationBar() {
           </Link>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <NavigationMenuTrigger>Oppertunities</NavigationMenuTrigger>
+          <NavigationMenuTrigger>Opportunities</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid gap-3 p-4 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">

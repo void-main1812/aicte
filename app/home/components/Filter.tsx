@@ -160,7 +160,11 @@ export function Filter() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size={"lg"} variant={"link"} className="text-lg font-bold">
+        <Button
+          size={"lg"}
+          variant={"link"}
+          className="text-lg font-black text-black p-4"
+        >
           Help me Search
         </Button>
       </DialogTrigger>
