@@ -1,7 +1,9 @@
 "use client";
 
+import { Button } from "@/components/ui/Button";
 import { fetchScholarShip } from "@/slices/ScholarShipSlice";
 import { AppDispatch, RootState } from "@/store/store";
+import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -9,6 +11,8 @@ const page = () => {
   const scholarShipEntities = useSelector(
     (state: RootState) => state.scholarship
   );
+
+  const router = useRouter();
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -22,6 +26,20 @@ const page = () => {
   return (
     <div className="p-8">
       <h1 className="py-16 text-3xl font-bold">Here are your Results</h1>
+      <div className="w-full py-2 flex justify-between items-center bg-white sticky top-0 right-0">
+        <p className="text-black font-semibold w-[25vw]">Institute</p>
+        <p className="text-black font-semibold w-[10vw] ">Amount</p>
+        <p className="text-black font-semibold w-[10vw] ">Student</p>
+      </div>
+      <Button
+        onClick={() => router.push("/home")}
+        variant={"outline"}
+        size={"lg"}
+        className="absolute right-8 top-8"
+      >
+        {" "}
+        Go Back Home{" "}
+      </Button>
       {scholarship.slice(0, 20).map((item: any, key: any) => (
         <div
           key={key}

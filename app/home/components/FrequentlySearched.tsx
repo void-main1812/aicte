@@ -72,6 +72,11 @@ const FrequentlySearched = ({
         </TabsList>
         <div className="w-full h-[80vh] bg-gray-50 rounded-xl border border-black/10 flex justify-start items-start overflow-y-scroll p-2">
           <TabsContent value="Colleges" className="w-full p-2">
+            <div className="w-full py-2 flex justify-between items-center bg-white sticky top-0 right-0">
+              <p className="text-black font-semibold w-[25vw]">Name</p>
+              <p className="text-black font-semibold w-[10vw] ">State</p>
+              <p className="text-black font-semibold w-[10vw] ">AICTE ID</p>
+            </div>
             {scholarship.slice(0, 10).map((item: any, key: any) => (
               <div
                 key={key}
@@ -90,6 +95,11 @@ const FrequentlySearched = ({
             ))}
           </TabsContent>
           <TabsContent value="Scholarships" className="w-full p-2">
+            <div className="w-full py-2 flex justify-between items-center bg-white sticky top-0 right-0">
+              <p className="text-black font-semibold w-[25vw]">Institute</p>
+              <p className="text-black font-semibold w-[10vw] ">Amount</p>
+              <p className="text-black font-semibold w-[10vw] ">Student</p>
+            </div>
             {scholarship.slice(0, 10).map((item: any, key: any) => (
               <div
                 key={key}
@@ -108,6 +118,11 @@ const FrequentlySearched = ({
             ))}
           </TabsContent>
           <TabsContent value="Faculties" className="w-full p-2">
+            <div className="w-full py-2 flex justify-between items-center bg-white sticky top-0 right-0">
+              <p className="text-black font-semibold w-[25vw]">Name</p>
+              <p className="text-black font-semibold w-[10vw] ">Faculty_id</p>
+              <p className="text-black font-semibold w-[10vw] ">Joining Date</p>
+            </div>
             {faculty.slice(0, 10).map((item: any, key: any) => (
               <div
                 key={key}
@@ -126,6 +141,11 @@ const FrequentlySearched = ({
             ))}
           </TabsContent>
           <TabsContent value="Password" className="w-full p-2">
+            <div className="w-full py-2 flex justify-between items-center bg-white sticky top-0 right-0">
+              <p className="text-black font-semibold w-[25vw]">Course</p>
+              <p className="text-black font-semibold w-[10vw] ">Duration</p>
+              <p className="text-black font-semibold w-[10vw] ">Platform</p>
+            </div>
             {course.slice(0, 10).map((item: any, key: any) => {
               return (
                 <div
