@@ -7,41 +7,21 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import SearchSection from "./components/SearchBar";
-import { useScrollPosition } from "@/hooks/useScrollPosition";
 import FrequentlySearched from "./components/FrequentlySearched";
 import NewsAndAnnouncement from "./components/NewsAndAnnouncement";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "@/store/store";
+import { fetchScholarShip } from "@/slices/ScholarShipSlice";
 
 const Page = () => {
   const router = useRouter();
-  const scrollPosition = useScrollPosition();
-
-  const [data, setData] = React.useState([]);
-
-  const [page, setPage] = React.useState(1);
-
-  const baseUrl = `https://aicte-backend-sih.onrender.com/api/v1/scholarship/getAllScholarships?page=${page}`;
-
-  async function fetchData() {
-    try {
-      const response = await axios.get(baseUrl);
-      console.log(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  if (page < 13) {
-    setPage(page + 1);
-    fetchData();
-  }
 
   return (
-    <div className="w-full flex flex-col pt-[5rem]">
+    <div className="w-full flex flex-col ">
       {/* Header */}
       <div
-        className={`p-4 w-full h-20 fixed top-0 flex justify-between items-center z-[99999] backdrop-blur-xl ${
-          scrollPosition > 10 ? "bg-white/50" : "bg-white"
+        className={`p-4 w-full h-20 fixed top-0 flex justify-between items-center z-[99999] backdrop-blur-xl 
+          bg-white/50
         }`}
       >
         {/* Logo */}
@@ -51,16 +31,10 @@ const Page = () => {
         >
           <Image
             src="/images/AICTE.png"
-            width={50}
-            height={50}
+            width={350}
+            height={80}
             alt="Logo for aicte"
           />
-          <div className="flex flex-col justify-center items-start">
-            <h1 className="text-xl font-bold">AICTE</h1>
-            <h2 className="text-sm font-base">
-              All India Council for Technical Education
-            </h2>
-          </div>
         </Link>
         <div className="flex gap-x-10">
           <NavigationBar />
@@ -74,7 +48,7 @@ const Page = () => {
         </div>
       </div>
       {/* Search Bar */}
-      <div className="w-full h-[80vh] flex justify-center items-center">
+      <div className="w-full h-[90vh] flex justify-center items-center">
         <SearchSection />
       </div>
       {/* Frequently searched data */}
