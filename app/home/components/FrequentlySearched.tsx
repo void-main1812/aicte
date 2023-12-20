@@ -1,13 +1,19 @@
 import { Button } from "@/components/ui/Button";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import { TabsContent } from "@radix-ui/react-tabs";
-import React, { useEffect } from "react";
+import React, { use, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchScholarShip } from "@/slices/ScholarShipSlice";
 import { AppDispatch, RootState } from "@/store/store";
 import { fetchCourses } from "@/slices/InstitutionSlice";
+import { fetchInstitutes } from "@/slices/CourseSlice";
+import { fetchFaculties } from "@/slices/FacultySlice";
 
-const FrequentlySearched = () => {
+const FrequentlySearched = ({
+  searchParams,
+}: {
+  searchParams: { id: string | undefined };
+}) => {
   const courseEntities = useSelector((state: RootState) => state.course);
 
   const scholarShipEntities = useSelector(
@@ -15,6 +21,8 @@ const FrequentlySearched = () => {
   );
 
   const instituteEntities = useSelector((state: RootState) => state.institute);
+
+  const facultyEntities = useSelector((state: RootState) => state.faculty);
 
   const dispatch = useDispatch<AppDispatch>();
 
@@ -26,11 +34,20 @@ const FrequentlySearched = () => {
     dispatch(fetchScholarShip());
   }, [dispatch]);
 
+  useEffect(() => {
+    dispatch(fetchInstitutes());
+  }, [dispatch]);
+
+  useEffect(() => {
+    dispatch(fetchFaculties());
+  }, [dispatch]);
+
   const course = courseEntities.entities;
   const scholarship = scholarShipEntities.entities;
   const institute = instituteEntities.entities;
+  const faculty = facultyEntities.entities;
 
-  console.log(scholarship);
+  console.log(faculty);
   // const { courseEntities } = useSelector((state: RootState) => state.course);
 
   // const dispatch = useDispatch<AppDispatch>();
@@ -44,17 +61,17 @@ const FrequentlySearched = () => {
     <div className="w-full justify-start items-start flex flex-col gap-y-8">
       <h1 className="text-3xl font-bold">Most Frequently Searched Results</h1>
       <Tabs
-        defaultValue="Collages"
+        defaultValue="Colleges"
         className="w-full flex flex-col justify-start items-start gap-y-4"
       >
         <TabsList className="grid w-[40%] grid-cols-4">
-          <TabsTrigger value="Collages">Collages</TabsTrigger>
+          <TabsTrigger value="Colleges">Colleges</TabsTrigger>
           <TabsTrigger value="Scholarships">Scholarships</TabsTrigger>
           <TabsTrigger value="Faculties">Faculties</TabsTrigger>
           <TabsTrigger value="Password">Courses</TabsTrigger>
         </TabsList>
         <div className="w-full h-[80vh] bg-gray-50 rounded-xl border border-black/10 flex justify-start items-start overflow-y-scroll p-2">
-          <TabsContent value="Collages" className="w-full p-2">
+          <TabsContent value="Colleges" className="w-full p-2">
             {scholarship.slice(0, 10).map((item: any, key: any) => (
               <div
                 key={key}
@@ -90,7 +107,24 @@ const FrequentlySearched = () => {
               </div>
             ))}
           </TabsContent>
-          <TabsContent value="Faculties"> Faculty Data </TabsContent>
+          <TabsContent value="Faculties" className="w-full p-2">
+            {faculty.slice(0, 10).map((item: any, key: any) => (
+              <div
+                key={key}
+                className="p-4 my-2 border-b-[1px] flex w-full justify-between items-center px-4"
+              >
+                <p className="truncate w-[25vw] font-semibold text-black">
+                  {item.name}
+                </p>
+                <p className=" font-light text-black/50 w-[12vw] py-1 text-center text-yellow-500 bg-yellow-50 border-[1px] rounded-md border-yellow-500">
+                  Rs.{item.faculty_id}
+                </p>
+                <p className=" font-light text-black w-[10vw] truncate">
+                  {item.date_of_joining}
+                </p>
+              </div>
+            ))}
+          </TabsContent>
           <TabsContent value="Password" className="w-full p-2">
             {course.slice(0, 10).map((item: any, key: any) => {
               return (
