@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import ScholarshipReducer from "../slices/ScholarShipSlice";
 import CourseReducer from "../slices/InstitutionSlice";
 import InstituteReducer from "../slices/CourseSlice";
+import FacultyReducer from "../slices/FacultySlice";
 
 export function makeStore() {
   return configureStore({
@@ -10,6 +11,7 @@ export function makeStore() {
       scholarship: ScholarshipReducer,
       course: CourseReducer,
       institute: InstituteReducer,
+      faculty: FacultyReducer,
     },
   });
 }

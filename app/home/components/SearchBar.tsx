@@ -8,9 +8,12 @@ import SpeechRecognition, {
   useSpeechRecognition,
 } from "react-speech-recognition";
 import useClipboard from "react-use-clipboard";
+import { useParams } from "next/navigation";
 
 const SearchSection = () => {
   const [textToCopy, setTextToCopy] = useState();
+
+  const { query } = useParams();
 
   const startListening = () =>
     SpeechRecognition.startListening({ continuous: true, language: "en-IN" });
@@ -38,7 +41,14 @@ const SearchSection = () => {
   }
 
   const onSearchSubmit = (value: string) => {
-    router.push(`/search?query=${value}`);
+    var searchArray = value.split(" ");
+    searchArray.includes("scholarship")
+      ? router.push("/search/scholarships")
+      : searchArray.includes("faculty")
+      ? router.push("/search/faculty")
+      : searchArray.includes("course")
+      ? router.push("/search/courses")
+      : router.push("/search/institution");
   };
   const [search, setSearch] = React.useState("");
   const router = useRouter();
@@ -78,7 +88,7 @@ const SearchSection = () => {
             <Button
               size={"lg"}
               className="w-[25%] h-12 rounded-sm shadow-xl shadow-black/25 hover:shadow-none transition"
-              onClick={() => toggleListening()}
+              onClick={() => onSearchSubmit(search)}
             >
               Search
             </Button>
