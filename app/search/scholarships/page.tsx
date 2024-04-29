@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-const page = () => {
+const Page = () => {
   const scholarShipEntities = useSelector(
     (state: RootState) => state.scholarship
   );
@@ -60,4 +60,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
