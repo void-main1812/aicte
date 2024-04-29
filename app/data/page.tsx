@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/Select";
 import React from "react";
 
-const page = () => {
+const Page = () => {
   const [variants, setVariants] = React.useState("");
 
   function handleScroll(e: string) {
@@ -56,4 +56,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
