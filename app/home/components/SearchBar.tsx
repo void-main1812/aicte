@@ -13,6 +13,8 @@ import { useParams } from "next/navigation";
 const SearchSection = () => {
   const [textToCopy, setTextToCopy] = useState();
   const [isListening, setIsListening] = useState(false);
+  const [search, setSearch] = useState("");
+  const router = useRouter();
 
   const { query } = useParams();
 
@@ -49,8 +51,7 @@ const SearchSection = () => {
       ? router.push("/search/courses")
       : router.push("/search/institution");
   };
-  const [search, setSearch] = React.useState("");
-  const router = useRouter();
+  
 
   return (
     <div className="w-full h-full overflow-hidden relative">
