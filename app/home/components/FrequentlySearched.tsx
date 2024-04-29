@@ -10,7 +10,7 @@ import { fetchInstitutes } from "@/slices/CourseSlice";
 import { fetchFaculties } from "@/slices/FacultySlice";
 
 const FrequentlySearched = ({
-  searchParams,
+  searchParams?,
 }: {
   searchParams: { id: string | undefined };
 }) => {
