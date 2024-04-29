@@ -12,6 +12,7 @@ import { useParams } from "next/navigation";
 
 const SearchSection = () => {
   const [textToCopy, setTextToCopy] = useState();
+  const [isListening, setIsListening] = useState(false);
 
   const { query } = useParams();
 
@@ -24,8 +25,6 @@ const SearchSection = () => {
   if (!browserSupportsSpeechRecognition) {
     return null;
   }
-
-  const [isListening, setIsListening] = React.useState(false);
 
   function toggleListening() {
     setIsListening((prevState) => {
