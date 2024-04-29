@@ -15,14 +15,15 @@ const SearchSection = () => {
   const [isListening, setIsListening] = useState(false);
   const [search, setSearch] = useState("");
   const router = useRouter();
+  const { transcript, browserSupportsSpeechRecognition } =
+    useSpeechRecognition();
 
   const { query } = useParams();
 
   const startListening = () =>
     SpeechRecognition.startListening({ continuous: true, language: "en-IN" });
 
-  const { transcript, browserSupportsSpeechRecognition } =
-    useSpeechRecognition();
+  
 
   if (!browserSupportsSpeechRecognition) {
     return null;
