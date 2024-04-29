@@ -8,7 +8,7 @@ import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-const page = () => {
+const Page = () => {
   const instutiuteEntities = useSelector((state: RootState) => state.institute);
 
   const dispatch = useDispatch<AppDispatch>();
@@ -59,4 +59,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
